@@ -6,7 +6,7 @@ const ARTICLES = [
     title: 'Shaka iLembe Sweeps the 2024 SAFTAs With a Record-Breaking 12 Awards',
     excerpt: 'The most ever won by a single production in one ceremony. We look back at the making of a landmark.',
     author: 'The Bomb Shelter', date: 'Feb 2024', read: '8 min',
-    img: 'assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
+    img: '/html//html/assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
     href: 'article.html', featured: true
   },
   {
@@ -14,7 +14,7 @@ const ARTICLES = [
     title: 'How South African Television Found Its Epic Voice',
     excerpt: 'Screen Africa profiles the production companies reshaping the continent\'s drama landscape — with The Bomb Shelter front and centre.',
     author: 'Screen Africa', date: 'Jan 2024', read: '6 min',
-    img: 'assets/isibaya__34-940x527.jpg',
+    img: '/html/assets/isibaya__34-940x527.jpg',
     href: 'https://screenafrica.com', source: 'Screen Africa'
   },
   {
@@ -22,7 +22,7 @@ const ARTICLES = [
     title: 'Behind the Beads: Crafting the World of Shaka iLembe',
     excerpt: 'Our costume, set and research teams on the two-year process of building a 19th-century Zulu kingdom from scratch.',
     author: 'The Bomb Shelter', date: 'Nov 2023', read: '11 min',
-    img: 'assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
+    img: '/html/assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
     href: 'article.html'
   },
   {
@@ -30,7 +30,7 @@ const ARTICLES = [
     title: 'Yizo-Yizo at 25: The Series That Changed Everything',
     excerpt: 'A quarter century after it first aired on SABC 1, we revisit the raw, controversial township drama that rewrote the rules of South African television.',
     author: 'The Bomb Shelter', date: 'Oct 2023', read: '14 min',
-    img: 'assets/yizo__21-940x527.jpg',
+    img: '/html/assets/yizo__21-940x527.jpg',
     href: 'article.html'
   },
   {
@@ -54,7 +54,7 @@ const ARTICLES = [
     title: 'Back of the Moon: Revisiting Sophiatown\'s Last Dance',
     excerpt: 'Director Angus Gibson on returning to 1950s Johannesburg, the jazz, the shebeens and the love story at the centre of a vanished world.',
     author: 'The Bomb Shelter', date: 'Jul 2023', read: '10 min',
-    img: 'assets/Back-of-the-Moon-pic.jpg',
+    img: '/html/assets/Back-of-the-Moon-pic.jpg',
     href: 'article.html'
   },
   {
@@ -62,7 +62,7 @@ const ARTICLES = [
     title: 'Amandla! Turns 21: A Revolution Still Singing',
     excerpt: 'The Sundance Grand Jury Prize winner remains one of the most important documents of the apartheid resistance. A retrospective look.',
     author: 'Variety', date: 'Jun 2023', read: '7 min',
-    img: 'assets/amandla-800-800-450-450-crop-fill.jpg',
+    img: '/html/assets/amandla-800-800-450-450-crop-fill.jpg',
     href: 'https://variety.com', source: 'Variety'
   },
   {
