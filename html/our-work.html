@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Work — b•mb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/our-work.css">
+<script src="../js/our-work.js" defer></script>
+</head>
+<body>
+
+<canvas id="grain"></canvas>
+<div class="scanline"></div>
+
+<!-- Sprockets -->
+<div class="sprocket l" id="sp-l"></div>
+<div class="sprocket r" id="sp-r"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo"><img src="../assets/Bomb_logo_bg.png" alt="b•mb" /></div>
+  <ul class="nav-links">
+    <li><a href="/html/index.html">HOME</a></li>
+    <li><a href="/html/about.html">ABOUT US</a></li>
+    <li><a href="/html/our-work.html"  class="active">OUR WORK</a></li>
+    <li><a href="/html/watch.html">WATCH</a></li>
+    <li><a href="/html/shaka.html">SHAKA ILEMBE</a></li>
+    <li><a href="/html/news.html" >NEWS</a></li>
+    <li><a href="/html/shop.html">SHOP</a></li>
+  </ul>
+</nav>
+
+<!-- Page -->
+<div class="page">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div class="header-left">
+      <h1>Our Work</h1>
+      <p>A body of work — South Africa &amp; beyond</p>
+    </div>
+    <div class="header-right">
+      Established <span>1997</span><br />
+      Projects <span id="total-count">—</span><br />
+      35mm Archive
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-bar" id="filter-bar"></div>
+
+  <!-- Result bar -->
+  <div class="result-bar">
+    <span>Showing <em id="showing-count">—</em> projects</span>
+    <span id="active-cat-label">All Categories</span>
+  </div>
+
+  <!-- Grid -->
+  <div class="work-grid" id="work-grid"></div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <button class="modal-close" id="modal-close">✕ Close</button>
+  <div class="modal" id="modal-inner">
+    <div class="modal-img-panel" id="modal-img-panel">
+      <img id="modal-img" src="" alt="" />
+      <div class="modal-img-overlay"></div>
+      <div class="modal-strip" id="modal-strip"></div>
+    </div>
+    <div class="modal-info">
+      <div class="modal-cat" id="modal-cat"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-date" id="modal-date"></div>
+      <div class="modal-divider"></div>
+      <div class="modal-synopsis" id="modal-synopsis"></div>
+      <div class="modal-meta-grid" id="modal-meta-grid"></div>
+      <div class="modal-tags" id="modal-tags"></div>
+      <div class="modal-frame-ref">
+        <span id="modal-frame-l">FRAME —</span>
+        <span id="modal-frame-r">b•mb PRODUCTIONS</span>
+      </div>
+    </div>
+  </div>
+</div>  
+</body>
+</html>

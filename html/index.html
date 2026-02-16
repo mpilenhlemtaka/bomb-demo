@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home — b•mb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Neue+Haas+Grotesk+Display+Pro:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/home.css">
+<script src="../js/home.js" defer></script>
+</head>
+<body>
+
+<!-- Grain -->
+<canvas id="grain-canvas"></canvas>
+<!-- Scanline -->
+<div class="scanline"></div>
+<!-- Flash -->
+<div class="flash" id="flash"></div>
+<!-- Vignette -->
+<div class="vignette"></div>
+
+<!-- Sprocket holes -->
+<div class="sprocket left" id="sprocket-left"></div>
+<div class="sprocket right" id="sprocket-right"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo"><img src="../assets/Bomb_logo_bg.png" alt="b•mb" /></div>
+  <ul class="nav-links">
+    <li><a href="/html/index.html"  class="active">HOME</a></li>
+    <li><a href="/html/about.html">ABOUT US</a></li>
+    <li><a href="/html/our-work.html">OUR WORK</a></li>
+    <li><a href="/html/watch.html">WATCH</a></li>
+    <li><a href="/html/shaka.html">SHAKA ILEMBE</a></li>
+    <li><a href="/html/news.html">NEWS</a></li>
+    <li><a href="/html/shop.html">SHOP</a></li>
+  </ul>
+</nav>
+
+<!-- Progress bar -->
+<div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+
+<!-- Film counter -->
+<div class="film-counter" id="film-counter">
+  <span id="counter-current">01</span> / <span id="counter-total">00</span>
+</div>
+
+<!-- Hero slides -->
+<div class="hero" id="hero"></div>
+
+<!-- Category filter -->
+<div class="category-bar" id="category-bar"></div>
+
+<!-- Frame number -->
+<div class="frame-num" id="frame-num">FRAME 0001 — 35mm</div>
+
+<!-- Bottom meta -->
+<div class="film-meta">
+  <div class="meta-category" id="meta-category">TV</div>
+  <div class="meta-title" id="meta-title">—</div>
+  <div class="meta-date" id="meta-date">—</div>
+</div>
+
+<!-- Thumb strip -->
+<div class="thumb-strip">
+  <div class="thumb-strip-inner" id="thumb-strip"></div>
+</div>
+</body>
+</html>

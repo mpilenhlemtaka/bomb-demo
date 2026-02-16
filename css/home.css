@@ -1,0 +1,364 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #080808;
+    --white: #f0ece4;
+    --cream: #e8e0d0;
+    --accent: #c8b882;
+    --red: #8b1a1a;
+    --film-border: 3px solid rgba(240,236,228,0.12);
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Courier Prime', monospace;
+    overflow: hidden;
+    cursor: crosshair;
+  }
+
+  /* ─── FILM GRAIN OVERLAY ─── */
+  #grain-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+  }
+
+  /* ─── SPROCKET HOLES ─── */
+  .sprocket {
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 28px;
+    z-index: 90;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+    background: var(--black);
+    border-right: var(--film-border);
+  }
+  .sprocket.right {
+    right: 0;
+    border-right: none;
+    border-left: var(--film-border);
+  }
+  .sprocket-hole {
+    width: 14px; height: 10px;
+    background: transparent;
+    border: 1.5px solid rgba(240,236,228,0.2);
+    border-radius: 2px;
+    margin: 0 auto;
+  }
+
+  /* ─── FILM COUNTER ─── */
+  .film-counter {
+    position: fixed;
+    top: 18px;
+    right: 46px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(240,236,228,0.4);
+    z-index: 200;
+    writing-mode: initial;
+  }
+  .film-counter span { color: var(--accent); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 46px;
+    height: 52px;
+    border-bottom: var(--film-border);
+    background: rgba(8,8,8,0.6);
+    backdrop-filter: blur(8px);
+    position: fixed;
+  }
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+    opacity: 0.92;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  /* ─── HERO / SLIDES ─── */
+  .hero {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .slide.active { opacity: 1; }
+  .slide.prev { opacity: 0; }
+
+  .slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) contrast(1.15) brightness(0.7);
+    transform: scale(1.06);
+    transition: transform 8s ease-out;
+  }
+  .slide.active img { transform: scale(1.0); }
+
+  /* Film negative inversion effect on hover */
+  .slide img:hover { filter: grayscale(100%) invert(1) contrast(1.1) brightness(1.1); }
+
+  /* ─── SCAN LINE ─── */
+  .scanline {
+    position: fixed;
+    left: 28px; right: 28px;
+    height: 2px;
+    background: rgba(240,236,228,0.04);
+    pointer-events: none;
+    z-index: 85;
+    animation: scan 4s linear infinite;
+  }
+  @keyframes scan {
+    0%   { top: 52px; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  /* ─── VIGNETTE ─── */
+  .vignette {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center,
+      transparent 40%,
+      rgba(8,8,8,0.55) 75%,
+      rgba(8,8,8,0.92) 100%
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  /* ─── CATEGORY FILTER ─── */
+  .category-bar {
+    position: fixed;
+    left: 46px;
+    bottom: 56px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+  }
+  .cat-btn {
+    background: none;
+    border: none;
+    cursor: crosshair;
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.3);
+    padding: 3px 0;
+    position: relative;
+    transition: color 0.25s;
+  }
+  .cat-btn::before {
+    content: '';
+    position: absolute;
+    left: -12px; top: 50%;
+    transform: translateY(-50%);
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .cat-btn:hover { color: var(--white); }
+  .cat-btn.active { color: var(--white); }
+  .cat-btn.active::before { opacity: 1; }
+
+  /* ─── META INFO (bottom) ─── */
+  .film-meta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 46px 16px;
+    height: 52px;
+    border-top: var(--film-border);
+    background: rgba(8,8,8,0.55);
+    backdrop-filter: blur(4px);
+  }
+  .meta-category {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.4);
+    line-height: 1;
+  }
+  .meta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    line-height: 1;
+    text-align: center;
+    transition: opacity 0.3s;
+  }
+  .meta-date {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: rgba(240,236,228,0.4);
+    line-height: 1;
+  }
+
+  /* ─── THUMBNAILS STRIP ─── */
+  .thumb-strip {
+    position: fixed;
+    bottom: 52px;
+    right: 46px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-end;
+  }
+  .thumb-strip-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .thumb-strip-inner::-webkit-scrollbar { display: none; }
+
+  .thumb {
+    width: 68px; height: 38px;
+    overflow: hidden;
+    position: relative;
+    cursor: crosshair;
+    border: 1.5px solid rgba(240,236,228,0.08);
+    transition: border-color 0.25s, opacity 0.25s;
+    opacity: 0.45;
+    flex-shrink: 0;
+  }
+  .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.25s;
+  }
+  .thumb:hover,
+  .thumb.active {
+    border-color: var(--accent);
+    opacity: 1;
+  }
+  .thumb:hover img { filter: grayscale(60%) contrast(1.1); }
+
+  /* ─── SLIDE PROGRESS BAR ─── */
+  .progress-bar {
+    position: fixed;
+    top: 52px;
+    left: 28px; right: 28px;
+    height: 1px;
+    background: rgba(240,236,228,0.1);
+    z-index: 200;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width linear;
+  }
+
+  /* ─── EXPOSURE FLASH on slide change ─── */
+  .flash {
+    position: fixed;
+    inset: 0;
+    background: white;
+    pointer-events: none;
+    z-index: 95;
+    opacity: 0;
+  }
+  .flash.go {
+    animation: flashAnim 0.5s ease-out forwards;
+  }
+  @keyframes flashAnim {
+    0%  { opacity: 0.25; }
+    100% { opacity: 0; }
+  }
+
+  /* ─── FRAME NUMBER watermark ─── */
+  .frame-num {
+    position: fixed;
+    bottom: 62px;
+    left: 46px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    color: rgba(200, 184, 130, 0.3);
+    z-index: 200;
+    pointer-events: none;
+  }
+
+  /* ─── NO RESULTS ─── */
+  .no-results {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+  }
+  .no-results.show { display: flex; }
+  .no-results p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 0.15em;
+    color: rgba(240,236,228,0.1);
+  }
+
+  /* ─── TITLE CHANGE ANIMATION ─── */
+  @keyframes titleReveal {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .meta-title.changing { animation: titleReveal 0.35s ease-out forwards; }

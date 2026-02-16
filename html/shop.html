@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — b•mb Productions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/shop.css">
+<script src="../js/shop.js" defer></script>
+</head>
+<body>
+
+<canvas id="grain"></canvas>
+<div class="scanline"></div>
+<div class="sprocket l" id="sp-l"></div>
+<div class="sprocket r" id="sp-r"></div>
+<div class="toast" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="/assets/Bomb_logo_bg.png" alt="b•mb" /></div>
+  <ul class="nav-links">
+    <li><a href="/html/index.html">Home</a></li>
+    <li><a href="/html/about.html">About</a></li>
+    <li><a href="/html/our-work.html">Our Work</a></li>
+    <li><a href="/html/news.html">News</a></li>
+    <li><a href="/html/shop.html" class="active">Shop</a></li>
+  </ul>
+  <button class="cart-btn" id="cart-toggle-btn">
+    Cart <span class="cart-count" id="cart-count">0</span>
+  </button>
+</nav>
+
+<!-- CART BACKDROP -->
+<div class="cart-backdrop" id="cart-backdrop"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <span class="cart-head-title">Your Cart</span>
+    <button class="cart-close" id="cart-close-btn">✕ Close</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-summary" id="cart-summary"></div>
+    <p class="cart-shipping-note">▣ Shipping calculated at checkout · ZAR only</p>
+    <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+    <button class="continue-btn" id="continue-btn">← Continue Shopping</button>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="header-left">
+      <h1>The Shop</h1>
+      <p>Official b•mb Productions Merchandise</p>
+    </div>
+    <div class="header-right">
+      Currency <span>ZAR (R)</span><br/>
+      Ships within <span>South Africa</span><br/>
+      Production since <span>1996</span>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="filter-bar"></div>
+
+  <!-- PRODUCTS -->
+  <div class="shop-body">
+    <div class="product-grid" id="product-grid"></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-header">
+      <span class="faq-title">FAQs</span>
+      <span class="faq-sub">Frequently Asked Questions</span>
+    </div>
+    <div class="faq-grid" id="faq-grid"></div>
+  </div>
+
+  <!-- FOOTER STRIP -->
+  <div class="shop-footer-strip">
+    <span class="footer-strip-left">© The Bomb Shelter Productions · Est. 1996 · Johannesburg</span>
+    <div class="footer-strip-right">
+      <span>▣ Secure Checkout</span>
+      <span>▣ ZAR Only</span>
+      <span>▣ SA Shipping</span>
+    </div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
