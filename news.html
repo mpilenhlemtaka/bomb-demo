@@ -9,8 +9,178 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../css/news.css">
 <script src="../js/news.js" defer></script>
+
+<script src="/js/hamburger.js" defer></script>
+<style>
+/* Hide sprockets on mobile */
+@media (max-width: 768px) {
+  .sprocket { display: none !important; }
+  .sprocket.l, .sprocket.r, .sprocket.left, .sprocket.right { display: none !important; }
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 600;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  order: 3; /* push to right side of nav */
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #c8281e;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile nav styles */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* Adjust nav container */
+  nav {
+    left: 0 !important;
+    right: 0 !important;
+    padding: 0 16px !important;
+  }
+
+  /* Fix logo position on mobile */
+  nav .nav-logo,
+  nav > div:first-child,
+  nav > a:first-child {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    order: 1;
+  }
+
+  /* Full-screen menu overlay */
+  nav ul.nav-links,
+  nav .nav-links,
+  .nav-links {
+    position: fixed !important;
+    top: 52px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 52px) !important;
+    background: rgba(8, 8, 8, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    
+    /* Force vertical layout */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    
+    padding: 40px 0 !important;
+    margin: 0 !important;
+    
+    /* Slide in from right */
+    transform: translateX(100%) !important;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    
+    border-top: 1px solid rgba(240, 236, 228, 0.1);
+    overflow-y: auto !important;
+    z-index: 500 !important;
+    order: 2;
+  }
+
+  /* Open state */
+  nav ul.nav-links.open,
+  nav .nav-links.open,
+  .nav-links.open {
+    transform: translateX(0) !important;
+  }
+
+  /* List items */
+  .nav-links li {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  /* Links */
+  .nav-links a {
+    display: block !important;
+    width: 100% !important;
+    padding: 18px 32px !important;
+    font-size: 12px !important;
+    letter-spacing: 0.35em !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid rgba(240, 236, 228, 0.05) !important;
+    text-decoration: none !important;
+  }
+
+  /* Active link - no underline, just color */
+  .nav-links a.active::after {
+    display: none !important;
+  }
+
+  .nav-links a.active {
+    color: #c8281e !important;
+    background: rgba(200, 184, 130, 0.08) !important;
+  }
+
+  /* Remove page padding */
+  .page {
+    padding: 0 !important;
+  }
+
+  /* Prevent body scroll when menu open */
+  body.menu-open {
+    overflow: hidden !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  nav {
+    height: 48px !important;
+  }
+
+  .nav-logo img {
+    height: 16px !important;
+  }
+
+  .nav-links {
+    top: 48px !important;
+    height: calc(100vh - 48px) !important;
+  }
+}
+</style>
 </head>
 <body>
+
 
 <canvas id="grain"></canvas>
 <div class="scanline"></div>
