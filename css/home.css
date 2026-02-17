@@ -4,7 +4,7 @@
     --black: #080808;
     --white: #f0ece4;
     --cream: #e8e0d0;
-    --accent: #c8b882;
+    --accent: #c8281e;
     --red: #8b1a1a;
     --film-border: 3px solid rgba(240,236,228,0.12);
   }
@@ -71,46 +71,33 @@
   .film-counter span { color: var(--accent); }
 
   /* ─── NAV ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 46px;
-    height: 52px;
-    border-bottom: var(--film-border);
-    background: rgba(8,8,8,0.6);
-    backdrop-filter: blur(8px);
-    position: fixed;
-  }
-  .nav-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .nav-logo img {
-    height: 22px;
-    width: auto;
-    display: block;
-    opacity: 0.92;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-  .nav-links a {
-    font-family: 'Courier Prime', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(240,236,228,0.55);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--white); }
+nav {
+  position: fixed; top: 0; left: 22px; right: 22px;
+  z-index: 500; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,8,8,0.88);
+  backdrop-filter: blur(14px);
+}
+.nav-logo img { height: 20px; width: auto; display: block; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(240,236,228,0.45); text-decoration: none; transition: color 0.2s;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(240,236,228,0.45); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--white); position: relative; }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 1px; background: var(--accent);
+}
+
   /* ─── HERO / SLIDES ─── */
   .hero {
     position: fixed;
