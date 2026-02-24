@@ -103,7 +103,7 @@ const PROJECTS = [
     synopsis:'A definitive documentary portrait of Soweto — the city within a city. From its forced creation to its role as the heartbeat of South African resistance and culture.',
     director:'Various', genre:'Historical Documentary', runtime:'Feature', language:'English / Zulu', tags:['Soweto','History','Culture','Archive'] },
 
-  { cat:'DOCUMENTARIES', title:'MANDELA, SON OF AFRICA, FATHER OF A NATION', date:'1996', img:'/assets/Mandela (1996)_files/MV5BMTQzNTkwODY5MV5BMl5BanBnXkFtZTcwMTg0NzgwMw@@._V1_.jpg', size:'wide',
+  { cat:'DOCUMENTARIES', title:'MANDELA, SON OF AFRICA, FATHER OF A NATION', date:'1996', img:'/assets/MV5BMTQzNTkwODY5MV5BMl5BanBnXkFtZTcwMTg0NzgwMw@@._V1_.jpg', size:'wide',
     synopsis:'The authorised documentary portrait of Nelson Mandela, released in the year of his presidency. An extraordinary record of one of history\'s great lives, told in his own words.',
     director:'Joe Menell & Angus Gibson', genre:'Portrait Documentary', runtime:'118 min', language:'English', tags:['Mandela','History','Icon','Archive','Award Winner'] },
 
