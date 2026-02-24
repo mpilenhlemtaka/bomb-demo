@@ -52,7 +52,7 @@ const SLIDES = [
   { cat: 'DOCUMENTARIES', title: 'SOWETO: A HISTORY', date: '2021',
     img: '/assets/Soweto-1-800x800.jpg' },
   { cat: 'DOCUMENTARIES', title: 'MANDELA, SON OF AFRICA, FATHER OF A NATION', date: '1996',
-    img: '/assets/Mandela (1996)_files/MV5BMTQzNTkwODY5MV5BMl5BanBnXkFtZTcwMTg0NzgwMw@@._V1_.jpg' },
+    img: '/assets/MV5BMTQzNTkwODY5MV5BMl5BanBnXkFtZTcwMTg0NzgwMw@@._V1_.jpg' },
 
 
   // COMMERCIAL — 26
