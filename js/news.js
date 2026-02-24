@@ -6,7 +6,7 @@ const ARTICLES = [
     title: 'Shaka iLembe Sweeps the 2024 SAFTAs With a Record-Breaking 12 Awards',
     excerpt: 'The most ever won by a single production in one ceremony. We look back at the making of a landmark.',
     author: 'The Bomb Shelter', date: 'Feb 2024', read: '8 min',
-    img: '//assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
+    img: '/assets/SAFTAs-18-189-2.jpg',
     href: 'article.html', featured: true
   },
   {
@@ -22,7 +22,7 @@ const ARTICLES = [
     title: 'Behind the Beads: Crafting the World of Shaka iLembe',
     excerpt: 'Our costume, set and research teams on the two-year process of building a 19th-century Zulu kingdom from scratch.',
     author: 'The Bomb Shelter', date: 'Nov 2023', read: '11 min',
-    img: '/assets/Shaka-Ilembe_S1_2023_EPG_1920x1080-min-1140x570.jpg',
+    img: 'assets/Shaka_News4.jpg',
     href: 'article.html'
   },
   {
@@ -38,7 +38,7 @@ const ARTICLES = [
     title: 'The Bomb Shelter Productions: Three Decades of Telling Africa\'s Stories',
     excerpt: 'A long-read profile on Angus Gibson and the company that defined a generation of South African screen culture.',
     author: 'Mail & Guardian', date: 'Sep 2023', read: '9 min',
-    img: '',
+    img: 'assets/Shaka_News1.jpg',
     href: 'https://mg.co.za', source: 'Mail & Guardian'
   },
   {
@@ -46,16 +46,16 @@ const ARTICLES = [
     title: 'SAFTA 2023: The Full List of Winners',
     excerpt: 'The Bomb Shelter takes home 7 awards including Best Drama Series for Isithembiso and Best Director.',
     author: 'Channel24', date: 'Aug 2023', read: '4 min',
-    img: '',
+    img: 'assets/isthembiso_mzansi-magic-cast.png',
     href: 'https://channel24.co.za', source: 'Channel24'
   },
   {
     tag: 'Film', type: 'inhouse',
-    title: 'Back of the Moon: Revisiting Sophiatown\'s Last Dance',
-    excerpt: 'Director Angus Gibson on returning to 1950s Johannesburg, the jazz, the shebeens and the love story at the centre of a vanished world.',
-    author: 'The Bomb Shelter', date: 'Jul 2023', read: '10 min',
+    title: 'Angus Gibson completes post production on his feature film Back of the Moon',
+    excerpt: 'Back of the Moon, a gangster tale with a love story enmeshed, which was filmed by the Bomb crew in a hectic three weeks. It was written by Libby Dougherty and stars Richard Lukunku, Moneoa Moshesh and Lemogang Tsipa. Editing has just been completed.',
+    author: 'The Bomb Shelter', date: 'Jul 2023', read: '3 min',
     img: '/assets/Back-of-the-Moon-pic.jpg',
-    href: 'article.html'
+    href: 'moon_article.html'
   },
   {
     tag: 'Documentary', type: 'external',
@@ -69,8 +69,8 @@ const ARTICLES = [
     tag: 'Industry', type: 'inhouse',
     title: 'Pan-African Production: What It Actually Takes',
     excerpt: 'From Uganda to Ivory Coast to the DRC — producing across the continent requires more than a passport. Our team on the logistics, relationships and craft behind cross-border storytelling.',
-    author: 'The Bomb Shelter', date: 'May 2023', read: '12 min',
-    img: '',
+    author: 'The Bomb Shelter', date: 'May 2023', read: '8 min',
+    img: 'assets/shuga__05-940x527.jpg',
     href: 'article.html'
   },
 ];
